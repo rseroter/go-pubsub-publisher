@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--env=GOOGLE_BUILDABLE=./cmd/gopubsubpublisher', '--publish', 'gcr.io/seroter-project-base/go-pubsub-publisher:$BUILD_ID']
+  id: Build and package app
